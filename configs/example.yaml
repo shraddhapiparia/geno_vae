@@ -1,0 +1,40 @@
+dataset: data
+ld_tag: rsq_p2
+
+paths:
+  raw: /path/to/data.raw
+  memmap: /path/to/metadata/data.memmap
+  iids: /path/to/metadata/data_iids.npy
+  results_root: /path/to/results
+
+training:
+  batch_size: 64
+  epochs: 50
+  val_frac: 0.1
+  test_frac: 0.1
+  num_workers: 2
+  grad_clip: 0.5
+  dropout: 0.0
+  seed: 42
+  deterministic: false
+  use_amp: false
+  burnin_epochs: 10
+  patience: 10
+  min_delta: 1.0e-6
+
+mmd:
+  mults: [0.5, 1.0, 2.0, 4.0]
+
+sweep:
+  reg_type: [mmd, kl]
+  latent_dim: [8, 16]
+  lr: [3e-4]
+  warmup_steps: [200, 1000]
+  proj_dim: [64]
+  h1: [64]
+  h2: [32]
+  weight_decay: [1e-5]
+  activation: [leakyrelu]
+  beta_max:
+    kl:  [0.03, 0.05]
+    mmd: [1.0, 3.0]

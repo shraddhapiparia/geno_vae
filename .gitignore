@@ -1,0 +1,44 @@
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.eggs/
+build/
+dist/
+.env
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Data & results (never commit)
+results/
+data/
+*.raw
+*.bed
+*.bim
+*.fam
+*.memmap
+*.npy
+*.npz
+*.csv
+*.tsv
+*.pt
+*.pth
+*.ckpt
+*.png
+*.pdf
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Logs
+*.log

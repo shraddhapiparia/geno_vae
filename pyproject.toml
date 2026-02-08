@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "geno-vae"
+version = "0.1.0"
+description = "Work-in-progress VAE models for genotype matrices with KL/MMD regularization."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+
+
+dependencies = [
+  "numpy",
+  "pandas",
+  "pyyaml",
+  "matplotlib",
+  "torch"
+]
+
+[project.optional-dependencies]
+dev = [
+  "black",
+  "ruff",
+  "pytest",
+  "ipykernel"
+]
+
+[project.scripts]
+geno-vae-train = "geno_vae.train:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 88
+
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "I"]
