@@ -3,11 +3,11 @@
 Work-in-progress research code for training a VAE on genotype matrices (PLINK `.raw`) using a memmap-backed pipeline.
 
 This repo currently includes:
-- `.raw → memmap` conversion (one-time) and IID tracking
-- VAE training with MSE reconstruction on 0/1/2 genotypes
-- Regularization options: **KL** or **MMD**
-- β-annealing + early stopping
-- YAML-driven sweeps with per-run logs, plots, and embedding export (`μ`)
+- Efficient genotype handling via memory-mapped arrays
+- VAE models with KL or MMD regularization
+- β-annealing schedules and early stopping
+- YAML-driven hyperparameter sweeps
+- Exporting latent embeddings for downstream analysis
 
 ## Why this exists
 A baseline VAE on genotype data can strongly reflect ancestry structure. 
@@ -17,7 +17,8 @@ A baseline VAE on genotype data can strongly reflect ancestry structure.
 ## Quickstart
 
 ```bash
-pip install -r requirements.txt
-
-python scripts/train_vae.py --config configs/example_gacrs_r2p2.yaml
+git clone https://github.com/<you>/geno-vae-wip.git
+cd geno-vae-wip
+pip install -e .
+python -m geno_vae.train --config configs/example_gacrs_r2p2.yaml
 ```
