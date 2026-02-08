@@ -9,7 +9,6 @@ This repo currently includes:
 - YAML-driven hyperparameter sweeps
 - Exporting latent embeddings for downstream analysis
 
-## Why this exists
 A baseline VAE on genotype data can strongly reflect ancestry structure. 
 
 > **Note:** Results and conclusions may change as experiments evolve.
