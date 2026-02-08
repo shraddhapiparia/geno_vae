@@ -17,7 +17,7 @@ A baseline VAE on genotype data can strongly reflect ancestry structure.
 ## Quickstart
 
 ```bash
-git clone https://github.com/<you>/geno-vae.git
+git clone https://github.com/shraddhapiparia/geno-vae.git
 cd geno-vae
 pip install -e .
 python -m geno_vae.train --config configs/example.yaml
